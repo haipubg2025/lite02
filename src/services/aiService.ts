@@ -173,7 +173,7 @@ class AIService {
           method: 'POST',
           headers,
           body: JSON.stringify(bodyPayload),
-          signal: AbortSignal.timeout(300000) // Khắc phục tự ngắt kết nối: nâng thời hạn chờ lên 5 phút
+          signal: AbortSignal.timeout(600000) // Khắc phục tự ngắt kết nối: nâng thời hạn chờ lên 10 phút
         });
 
         // Nếu gặp lỗi 404, tức là website được deploy tĩnh (Netlify, GitHub Pages...) không có server Node.js chạy ngầm!
@@ -215,7 +215,7 @@ class AIService {
               const dataStr = chunkText.slice(6).trim();
               if (dataStr === "[DONE]") {
                 if (!hasReceivedText) {
-                  throw new Error("Lỗi kết nối: Máy chủ AI đã dừng phản hồi mà không trả về dữ liệu. Thời gian xử lý có thể đã vượt quá giới hạn Timeout (50 giây) của hệ thống hoặc lỗi gián đoạn từ phía API.");
+                  throw new Error("Lỗi kết nối: Máy chủ AI đã dừng phản hồi mà không trả về dữ liệu. Thời gian xử lý có thể đã vượt quá giới hạn Timeout của hệ thống hoặc lỗi gián đoạn từ phía API.");
                 }
                 return;
               }

@@ -147,7 +147,7 @@ async function startServer() {
         }
         aiClient = new GoogleGenAI({ 
           apiKey: activeProxy.key, 
-          httpOptions: { baseUrl: activeProxy.url, timeout: 300000 }
+          httpOptions: { baseUrl: activeProxy.url, timeout: 600000 }
         });
         console.log(`[Proxy enabled] Using custom proxy: ${activeProxy.url}`);
       } else {
@@ -158,7 +158,7 @@ async function startServer() {
         }
         aiClient = new GoogleGenAI({ 
           apiKey,
-          httpOptions: { timeout: 300000 } // Tăng giới hạn timeout lên 5 phút
+          httpOptions: { timeout: 600000 } // Tăng giới hạn timeout lên 10 phút
         });
         console.log(`[API Key enabled] Using standard API Key`);
       }
@@ -167,8 +167,8 @@ async function startServer() {
       res.setHeader("Cache-Control", "no-cache, no-transform");
       res.setHeader("Connection", "keep-alive");
       res.setHeader("X-Accel-Buffering", "no");
-      req.setTimeout(300000); // Tăng giới hạn Timeout của route lên 5 phút
-      res.setTimeout(300000);
+      req.setTimeout(600000); // Tăng giới hạn Timeout của route lên 10 phút
+      res.setTimeout(600000);
       res.flushHeaders();
 
       const sysInstruction = systemInstruction || "";
@@ -283,7 +283,7 @@ async function startServer() {
                'x-goog-api-key': activeProxy.key // Fallback param
              },
              body: JSON.stringify(reqBody),
-             signal: AbortSignal.timeout(300000)
+             signal: AbortSignal.timeout(600000)
            });
            
            if (!proxyStreamRes.ok) {
