@@ -256,7 +256,7 @@ export default function CharacterModal({ type, npcIndex, onClose }: CharacterMod
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }} 
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col w-screen h-screen p-0 m-0 overflow-hidden"
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col w-[100dvw] h-[100dvh] p-0 m-0 overflow-hidden"
       onClick={onClose}
     >
       <div 

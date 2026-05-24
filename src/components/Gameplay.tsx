@@ -1755,7 +1755,7 @@ Hành động tiếp theo của người chơi: ${userAction}`;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col w-screen h-screen p-0 m-0 overflow-hidden"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col w-[100dvw] h-[100dvh] p-0 m-0 overflow-hidden"
             onClick={() => setShowRules(false)}
           >
             <div 
@@ -1796,7 +1796,7 @@ Hành động tiếp theo của người chơi: ${userAction}`;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex flex-col w-screen h-screen p-0 m-0 overflow-hidden"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex flex-col w-[100dvw] h-[100dvh] p-0 m-0 overflow-hidden"
             onClick={() => setShowMemory(false)}
           >
             <div 
@@ -2133,7 +2133,7 @@ Hành động tiếp theo của người chơi: ${userAction}`;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex flex-col w-screen h-screen p-0 m-0 overflow-hidden"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex flex-col w-[100dvw] h-[100dvh] p-0 m-0 overflow-hidden"
             onClick={() => setShowSettings(false)}
           >
             <div 
